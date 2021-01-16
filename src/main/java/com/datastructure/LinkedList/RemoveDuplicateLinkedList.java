@@ -6,16 +6,21 @@ public class RemoveDuplicateLinkedList {
     {
         InsertionLinkedList.Node temp=head;
         InsertionLinkedList.Node prev=null;
-        while(temp.next!=null)
-        {
-            temp=temp.next;
-            prev=temp;
-            if(prev.data==temp.data)
-            {
-                prev.next=temp.next;
-            temp=temp.next;
-            }
-        }
+
+      try {
+          while (temp != null) {
+              System.out.println(temp.data);
+              if ( temp!=null&&(temp.data == temp.next.data))
+                  temp = temp.next.next;
+              else
+                  temp = temp.next;
+
+          }
+      }
+      catch (Exception e)
+      {
+          System.out.println("null pointer exception");
+      }
     }
 public void removeDuplicatesFromUnsortedList(InsertionLinkedList.Node head)
 {
@@ -50,6 +55,6 @@ public void removeDuplicatesFromUnsortedList(InsertionLinkedList.Node head)
        // System.out.println(head);
        list2.removeDuplicate(head);
        // list2.removeDuplicatesFromUnsortedList(head);
-       list.printList();
+       //list.printList();
     }
 }

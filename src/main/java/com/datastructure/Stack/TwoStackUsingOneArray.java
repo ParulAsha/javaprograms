@@ -1,9 +1,9 @@
 package com.datastructure.Stack;
 
 public class TwoStackUsingOneArray {
-    int array[];
-    int top1,top2;
-    int size;
+    private int array[];
+   private int top1,top2;
+  private  int size;
     TwoStackUsingOneArray(int n)
     {   array=new int[n];
         size=n;
@@ -11,7 +11,7 @@ public class TwoStackUsingOneArray {
         top2=size;
     }
 
-   public void push1(int x)
+    public void push1(int x)
     {
         if(top1<top2-1)
             array[++top1]=x;
@@ -21,17 +21,17 @@ public class TwoStackUsingOneArray {
             System.exit(0);
         }
     }
-   public void push2(int x)
+    public void push2(int x)
     {
-       if(top1<top2-1)
-       {
-           array[++top2]=x;
-       }
-       else
-       {
-           System.out.println("stack overflow");
-           System.exit(0);
-       }
+        if(top1<top2-1)
+        {
+            array[--top2]=x;
+        }
+        else
+        {
+            System.out.println("stack overflow");
+            System.exit(0);
+        }
 
     }
     public int pop1()
@@ -60,7 +60,7 @@ public class TwoStackUsingOneArray {
         }
         return x;
     }
-    public void main(String args[])
+    public static void main(String[] args)
     {
         TwoStackUsingOneArray twoStackUsingOneArray= new TwoStackUsingOneArray(100);
         twoStackUsingOneArray.push1(1);

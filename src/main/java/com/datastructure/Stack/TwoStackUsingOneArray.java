@@ -3,7 +3,7 @@ package com.datastructure.Stack;
 public class TwoStackUsingOneArray {
     private int array[];
    private int top1,top2;
-  private  int size;
+   private   int size;
     TwoStackUsingOneArray(int n)
     {   array=new int[n];
         size=n;
